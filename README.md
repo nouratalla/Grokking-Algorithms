@@ -1,2 +1,5 @@
 # Grokking-Algorithms
-Repository that contain information that I have learned from Grokking Algorithms Book and the implementation of code
+## :star: Repository that contain:
+  - what I learned from every chapter
+  - Implementation of the code
+  - Exercises solutions
