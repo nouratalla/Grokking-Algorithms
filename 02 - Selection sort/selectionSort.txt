@@ -1,0 +1,102 @@
+									 Selection Sort
+
+How memory works - > Each time you want to store an item in memory, you ask the computer 
+		     for some space, and it gives you an address where you can store your item
+		     If you want to store multiple items, there are two basic ways to 
+		     do so: - arrays
+			    - lists
+
+Arrays and linked lists :
+
+Scenario - > Suppose you’re writing an app to manage your todos
+
+problem -> shoild i use array or linked list ?
+
+1- Array:
+
+	Using an array means all your tasks are stored contiguously (right next to each other) in memory
+
+problem :
+	a problem with it if the list contain at first three tasks and you want to add a fourth one but But the next drawer is 
+	taken up by someone else’s stuff! -> In this case, you need to ask your computer for a different chunk of memory that can fit four tasks
+	then move all your tasks there if it happen again and you want to add one more task the same process is repeated
+
+solution:
+	Hold seats scenario -> even if you have only 3 items in your task list, you can ask the computer for 10 slots, just in case you need more space
+
+limitations with this solution:
+
+- You may not need the extra slots that you asked for, and then that memory will be wasted. You aren’t using it, but no one else can use 
+  it either
+
+- You may add more than 10 items to your task list and have to move anyway
+
+problems:
+
+- Inserting into the middle of array -> you have to shift all the rest of the elements down.
+					And if there’s no space, you might have to copy everything to a new location!
+
+Strength:
+
+Arrays are great if you want to read random elements, because you can look up any element in your array instantly. 
+
+Array Details:
+
+- The position of an element is called its index
+
+
+2- Linked lists:
+	
+	With linked lists, your items can be anywhere in memory and each item stores the address of the next item in the list
+	So, If there’s space in memory, you have space for your linked list.
+
+Strength:
+	
+	- Inserting into the middle of a list is as easy as changing what the previous element points to ( better than array in this case )
+
+problem with it - > - Suppose you want to read the last item in a linked list. You can’t just read it, because you don’t know what 	
+		    address it’s at. Instead, you have to go to item #1 to get the address for item #2
+		    Then you have to go to item #2 to get the address for item #3 And so on
+		    So, if you’re going to keep jumping around, linked lists are terrible
+			
+		    
+
+
+EXERCISE: 
+2.1 List
+
+
+
+		 				Array													List
+
+Insert in the middle			have to shift all the rest of the elements down.						Easy as changing what the previous element points to (better) O(1)
+					And if there’s no space, you might have to copy everything to a new location! O(n)				
+		     
+
+Deletions				everything needs to be moved up when you delete an element O(n)					Just need to change what the previous element points to (better) O(1)
+
+
+Reading					use address of element to access it instantly (better)	O(1)					To read an element you shoud read the prevoius elements until you reach it O(n)
+
+
+Type of Access:
+
+- Random access -> like in arrays read item instantly by its address
+
+- sequential access - > means reading the elements one by one, starting at the first element	
+
+
+EXERCISE:
+
+2.2 -> linked list is more suitableas the chef always will take the first order and work one by one untill he get last order
+
+2.3 -> An array is used as binary search need random access
+
+2.4 -> As the binary search is used the new user name added should be placed in the  right order so the elements in array will be shifted and this will be slow process
+
+2.5 -> the new data structure will be slower in searching 
+       as it reqire one operation to get the linked list that conatin letter and one operation to get the user name needed
+	
+       in insertion it will be faster than arrays as there is no shifting 
+
+
