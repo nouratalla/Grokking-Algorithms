@@ -1,0 +1,88 @@
+									Quicksort
+
+
+Divide & conquer (D&C):
+
+- D&C isn’t a simple algorithm that you can apply to a problem. Instead, it’s a way to think about a problem
+
+- It is a recursive technique for solving problems
+
+- steps:
+	
+	1- Figure out the base case. This should be the simplest possible case
+	2- Divide or decrease your problem until it becomes the base case
+
+- example:
+
+	-> get sum of an array of numbers [2],[4],[6]
+	-> step1: Figure out the base case which is What’s the simplest array you could get?
+	-> the simplest array is an array with 0 element or one element on it 
+	-> step2: decrease the problem to base case ( 0 element )
+	-> sum ([2],[4],[6]) =
+		- > 2 + sum ([4],[6])
+		- > 4 + sum ([6] ) 
+		- > sum ( [6] ) which is 6
+
+- EXERCISES:
+
+4.1 -> sumUsingD&C.py
+4.2 -> countUsingD&C.py
+4.3 -> maxUsingD&C.py
+4.4 -> base case: having one item in array and compare it to the one i compare to
+       recursive: every time i divide the array into half of numbers and call function again
+
+
+Quicksort:
+
+- sorting algorithm faster than selection sort and also use D&C
+- steps:
+	1- pick an element from the array ( This element is called the pivot )
+	2- find the elements smaller than the pivot and the elements larger than the pivot (This is called partitioning)
+		- now we have:
+			-> A sub-array of all the numbers less than the pivot (not sorted)
+			-> The pivot 
+			-> A sub-array of all the numbers greater than the pivot (not sorted)
+	3- Call quicksort recursively on the two sub-arrays
+
+Inductive proofs: one way to prove that your algorithm works
+
+compose of two steps:
+	1- base case -> show that algorithm work in base case like in quicksort algorithm works on arrays of size 0 and 1
+	2- inductive case ->  if quicksort works for an array of size 1, it will work for an array of size 2 
+			      And if it works for arrays of size 2, it will work for arrays of size 3, and so on
+
+- its big o d depends on the pivot you choose In the 
+	-> worst case quicksort takes O(n^2) time
+	-> average case O(n log n) time
+
+Average case vs. worst case:
+
+Note: The performance of quicksort heavily depends on the pivot you choose.
+
+- worst case : choose the first element as the pivot and the array is already sorted [1,2,3,4,5,6,7,8]	total length of call stack is 8 So, stack size O(n)
+- best case: choose the middle element [1,2,3,4,5,6,7,8]  total length of call stack is 4 So, stack size O(log n)
+- note every time in call stack you touch all n elements of the array O(n)
+- So, each level on call stack take O(n)
+- in worst case each level take O(n) and the height of call stack was O(n0 so it will be O(n^2)
+- in best case O(n) * O(log n ) = O(n log n )
+- If you always choose a random element in the array as the pivot, quicksort will complete in O(n log n) time on average 
+- So, best case is the average case
+
+EXERCISES:
+4.5 -> O(n)
+4.6 -> O(n)
+4.7 -> O(1)
+4.8 -> O(n^2) every element will be touched twice 
+
+
+Constants in Big O notation:
+- usually constant is ignored, because if two algorithms have different Big O times, the constant doesn’t matter
+- Example: binary search (1 sec * log n ) Vs simple seacrh (10ms * n)
+	-  Simple search has a constant of 10 milliseconds, but binary search has a constant of 1 second 
+	-  So, simple search is a way faster
+	-  but what about searching a list of 4 billion elements 
+	-  binary search takes 32 sec | simple search takes 463 days
+	-  binary search is still way faster. That constant didn’t make a difference at all.
+
+- But sometimes the constant can make a difference
+- Example  Quicksort VS merge sort if they are both  O(n log n) So, quicksort is faster as it has smaller constant than merge sort
