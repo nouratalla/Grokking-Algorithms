@@ -1,0 +1,58 @@
+								         	Hash Tables
+
+Hash functions:
+- A hash function is a function where you put in a string and you get back a number
+- In technical terminology  hash function (maps strings to numbers)
+- requirements for a hash function
+	1- It needs to be consistent. For example, suppose you put in (apple) and get back (4). 
+	   Every time you put in (apple), you should get (4) back. Without this, your hash table won’t work.
+	2- Every different word should map to a different number
+
+- Put a hash function and an array together, and you get a data structure called a hash table (hash maps - maps - dictionaries - associative arrays)
+- hash table differ from array and list which maps staraight to memory but hash tables use a hash function to figure out where to store element
+- Python has hash tables, they’re called dictionaries
+- A hash table has keys and values
+- A hash table maps keys to values
+
+EXERCISES:
+5.1 -> consistent
+5.2 -> not consistent
+5.3 -> not consistent
+5.4 -> consistent
+
+Use cases:
+- Lookups (searching in phone for person number by its name) (Modeling relationships from one thing to another thing)
+- prevent duplicates
+- cache (websites remember the data instead of recalculating it)
+
+Collisions: means two keys have been assigned the same slot
+	- apple return 4
+	- avocado return aslo 4
+
+To deal with it:
+	1- The simplest one is this: if multiple keys map to the same slot, start a linked list at that slot
+		- this solution slow the performence a little bit as you need to search in linked list
+		- So ,If those linked lists get long, it slows down your hash table a lot. But they won’t get long if you use a good hash function!
+
+To avoid collisions, you need
+	1- A low load factor
+	2- good hash function
+
+Load factor:
+- measures how many empty slots remain in your hash table
+- its calculated by formula -> (number of items in hash table) / (total number of slots )
+- Having a load factor greater than 1 means you have more items than slots in your array. 
+- Once the load factor starts to grow, you need to add more slots to your hash table and this called (resizing)
+- resize when your load factor is greater than 0.7
+
+Performance:
+
+- average case, hash tables take O(1)(constant time) for everything
+- That means it doesn’t matter whether your hash table has 1 element or 1 billion elements, getting something out of a hash table will take the same amount of time
+- worst case, a hash table takes O(n) happen when a hash function that maps all items to the same slot in the hash table.
+
+
+EXERCISES:
+5.5 -> D
+5.6 -> B , D
+5.7 -> D , C
