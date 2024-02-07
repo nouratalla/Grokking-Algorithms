@@ -1,0 +1,83 @@
+								   Breadth-first search
+
+
+Introduction to graphs:
+
+- graph models a set of connections
+- Each graph is made up of nodes and edges
+- A node can be directly connected to many other nodes called (neighbors)
+
+Breadth-first search:
+- search algorithm that runs on graphs
+- help answer two types of questions
+	1- Is there a path from node A to node B?
+	2- What is the shortest path from node A to node B?
+
+problem:
+
+- finding mango seller in my network on facebook
+- so the first question is there a mango seller in my network ?
+- steps to solve it:
+	1- make a list of my friends on facebook (first degree connections )
+	2- go to every person and check whether that person is a mango seller or not
+	3- suppose none of them wasn't a mango seller
+	4- now we should search on friends of friends ( second degree connections )
+
+- Note: you shouldn’t search any second-degree connections before you make sure you don’t have a first-degree connection who is a mango seller
+- Note: that this only works if you search people in the same order in which they’re added
+- So, you need to search people in the order that they’re added
+- So, we need data structure called queue
+- Note: Once you check someone, make sure you don’t check them again.Otherwise, you might end up in an infinite loop.
+
+
+
+Queues:
+
+- A queue works the same way as a bus stop the first one come is the first one to enter the bus (FIFO) First-in First-out
+- Queues are similar to stacks You can’t access random elements in the queue. Instead, there are two only operations, enqueue and dequeue
+- stack is (LIFO) last-in first-out
+
+EXERCISES:
+6.1 -> 2 steps
+6.2 -> CAB to CAT and from CAT to BAT which is 2 
+
+Implementing the graph:
+
+- A graph consists of several nodes.
+- each node is connected to neighboring nodes
+- so we need a data structure to express relationships between nodes which is hash table
+- we need to map the node to list of neighbors
+- does it matter what order you add the key/value pairs in ? the anser is no as hash table have no ordering
+
+graphs has two types:
+	1- undirected: s don’t have arrows, and the relationship goes both ways 
+	2- directed:  has arrows, and the relationship follows the direction of the arrow
+
+Running time of bfs:
+- O(V+E) - > (V for number of vertices, E for number of edges).
+
+EXERCISE:
+6.3 -> A invalid
+       B valid
+       C invalid
+
+6.4 ->  1 - wake up
+	2 - Exercise
+	3 - Shower
+	4 - Brush teeth
+	5 - Get breakfast
+	6 - pack lunch
+	7 - get dressed
+
+Use case -> 
+	- Suppose you have a family tree
+	- This is a graph, because you have nodes (the people) and edges. The edges point to the nodes’ parents. But all the edges go down—it 
+	  wouldn’t make sense for a family tree to have an edge pointing back up! That would be meaningless—your dad can’t be your grandfather’s dad!
+	- This is called a tree
+Tree: A tree is a special type of graph, where no edges ever point back.
+
+6.5 -> A & C
+
+
+
+	
