@@ -1,0 +1,59 @@
+									Greedy algorithms
+A greedy algorithm is simple:
+
+-  At each step, pick the optimal move ( locally optimal solution )
+
+EXERCISES:
+
+8.1 -> greedy search will work as follow get the biggest box and put it in the trucek and the second largest box and so on, that isn't optimal solution
+8.2 -> same thing pick place with the highest point and so on untill seven dayas are finished, not optimal
+
+The set-covering problem:
+
+problem: i have a radio show and want to cover 50 states with the smallest number of stations 
+
+solution: 
+	1- List every possible subset of stations (called power set) = 2^n subsets
+	2- pick set with smallest number of the staion
+
+- This is how greedy algorithm work in this scenario which takes  O(2^n)
+- This solution is possible for 5 or 10 states but for 100 it will take years !!
+
+Approximation algorithms:
+
+- with this algoritm we will silve it as the following
+
+	1- Pick the station that covers the most states that haven’t been covered yet. It’s OK if the station covers some states that have been covered 
+	   already
+	2- Repeat until all the states are covered
+
+- judge approximation by:
+
+	- how fast they are
+	- How close they are to the optimal solution
+
+EXERCISES:
+8.3 -> no
+8.4 -> Yes
+8.5 -> Yes
+
+NP-complete problems:
+- some problems are famously hard to solve like -> Traveling salesperson problem
+- in this cases we get for it a prettry short solution as we can't find optimal solution (solve it using approximation)
+
+How do you tell if a problem is NP-complete?
+- there’s no easy way to tell if the problem you’re working on is NP-complete. Here are some giveaways:
+	1- Your algorithm runs quickly with a handful of items but really slows down with more items
+	2- “All combinations of X” usually point to an NP-complete problem
+	3- Do you have to calculate “every possible version” of X because you can’t break it down into smaller sub-problems? Might be 
+           NP-complete
+	4- If your problem involves a sequence and it is hard to solve
+	5- If your problem involves a set and it is hard to solve (radio stations)
+	6- Can you restate your problem as the set-covering problem or the traveling-salesperson problem? Then your problem is definitely 
+	   NP-complete
+
+EXERCISES:
+8.6 -> Yes
+8.7 -> Yes
+8.8 -> Yes
+
