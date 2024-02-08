@@ -1,0 +1,35 @@
+										Dijkstra’s Algorithm
+
+Note:
+
+- It’s not necessarily the fastest path from point to another one Is the shortest path, because it has the least number of segments
+- So, in previous chapter BFS find you the path with the fewest segments
+- But, what if i need fastest path instead?
+- Here is come  Dijkstra’s algorithm
+
+Working with Dijkstra’s algorithm:
+- There are four steps to Dijkstra’s algorithm:
+	1- Find the “cheapest” node. This is the node you can get to in the least amount of time
+	2- Update the costs of the neighbors of this node
+	3- Repeat until you’ve done this for every node in the graph
+	4- Calculate the final path
+-So, Then Dijkstra’s algorithm finds the path with the smallest total weight
+
+Terminology:
+
+- weight: is a number assigned to each edge in the graph 
+- weighted graph: is a graph with weights ( use Dijkstra’s  to calculate shorted
+- unweighted graph: is a graph without weights ( use BFS to calculate shortest path )
+- An undirected graph means that both nodes point to each other. That’s a cycle and cyclejust add weight to total amount
+- So, Dijkstra’s algorithm only works with directed acyclic graphs which is called (DAGS)
+
+Negative-weight edges:
+- Negative-weight edges break the algorithm
+- as it lead to updating cost oralready processed nodes and it is a red flag
+- to deal with negative weights there is an algorithm called Bellman-Ford algorithm
+
+
+EXERCISE:
+7.1 ->  A (5-2-1)
+	B (10-20-30)
+	c Negative weighted graph
